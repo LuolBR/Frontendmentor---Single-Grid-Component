@@ -19,14 +19,8 @@ $fontColor: hsl(218, 22%, 67%);
 
 @mixin firstSectionDesign() {
     background-color: white;
-    padding: 20px 1px 1px 20px;  
-     
+    padding: 20px 20px 1px 20px; 
 } 
-
-//@font-face {
-    //font-family: 'Karla';
-   // src: local(Karla), url(https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap);
-//}
 
 * {
     @include reset();
@@ -42,24 +36,25 @@ body {
 main {
     max-width: 1440px;
     margin: 200px 300px;
-    @include flexCenter(row, wrap);    
-
-    // background-color: yellow;   
-   
+    @include flexCenter(row, wrap);     
 }
 
 .first-section {
     @include firstSectionDesign();
-    width: 100%;
-    border-radius: 10px 10px 0 0;    
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    border-radius: 10px 10px 0 0;  
 
     h1 {
-        @include firstSectionDesign();               
-        color: $primaryOne;
-        
+        @include firstSectionDesign();
+        display: flex;                     
+        color: $primaryOne; 
+        width: auto;       
     }
 
     article {
+        align-items: flex-start;
         background-color: $firstSectionBackground;
         margin: 0;
         

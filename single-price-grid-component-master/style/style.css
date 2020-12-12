@@ -31,25 +31,41 @@ main {
 
 .first-section {
   background-color: white;
-  padding: 20px 1px 1px 20px;
-  width: 100%;
+  padding: 20px 20px 1px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   border-radius: 10px 10px 0 0;
 }
 
 .first-section h1 {
   background-color: white;
-  padding: 20px 1px 1px 20px;
+  padding: 20px 20px 1px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #2ab2af;
+  width: auto;
 }
 
 .first-section article {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   background-color: white;
   margin: 0;
 }
 
 .first-section article h2 {
   background-color: white;
-  padding: 20px 1px 1px 20px;
+  padding: 20px 20px 1px 20px;
   color: #c0df34;
   font-size: 1.1em;
 }
