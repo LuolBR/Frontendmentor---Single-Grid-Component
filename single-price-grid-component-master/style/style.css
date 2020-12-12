@@ -1,12 +1,7 @@
-@font-face {
-  font-family: 'Karla';
-  src: local(Karla), url(https://fonts.google.com/specimen/Karla);
-}
-
 * {
   margin: 0;
   padding: 0;
-  background-color: #e6eff6;
+  background-color: #e5eff5;
 }
 
 body {
@@ -17,6 +12,8 @@ body {
 }
 
 main {
+  max-width: 1440px;
+  margin: 200px 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,5 +23,46 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+.first-section {
+  background-color: white;
+  padding: 20px 1px 1px 20px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.first-section h1 {
+  background-color: white;
+  padding: 20px 1px 1px 20px;
+  color: #2ab2af;
+}
+
+.first-section article {
+  background-color: white;
+  margin: 0;
+}
+
+.first-section article h2 {
+  background-color: white;
+  padding: 20px 1px 1px 20px;
+  color: #c0df34;
+  font-size: 1.1em;
+}
+
+.first-section article ul {
+  background-color: white;
+  list-style-type: none;
+  padding: 10px 20px 40px 20px;
+}
+
+.first-section article ul li {
+  background-color: white;
+  color: #98a6bd;
+  line-height: 1.4em;
 }
 /*# sourceMappingURL=style.css.map */

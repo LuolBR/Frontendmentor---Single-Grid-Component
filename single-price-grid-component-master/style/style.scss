@@ -1,26 +1,36 @@
 $primaryOne: hsl(179, 62%, 43%); 
 $primaryTwo: hsl(71, 73%, 54%);
-$background: #e6eff6;  
+$primaryThree: hsl(179, 47%, 52);
+$mainBackground: hsl(204, 43%, 93%);
+$firstSectionBackground: white;
+$fontColor: hsl(218, 22%, 67%);
 
 @mixin reset() {
     margin: 0;
     padding: 0;  
 }
 
-@mixin flexCenter() {
+@mixin flexCenter($direction, $wrap) {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-flow: $direction $wrap;
 }
 
-@font-face {
-    font-family: 'Karla';
-    src: local(Karla), url(https://fonts.google.com/specimen/Karla);
-}
+@mixin firstSectionDesign() {
+    background-color: white;
+    padding: 20px 1px 1px 20px;  
+     
+} 
+
+//@font-face {
+    //font-family: 'Karla';
+   // src: local(Karla), url(https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap);
+//}
 
 * {
     @include reset();
-    background-color: $background;     
+    background-color: $mainBackground;     
 }
 
 body {
@@ -30,8 +40,51 @@ body {
 }
 
 main {
-   @include flexCenter();
+    max-width: 1440px;
+    margin: 200px 300px;
+    @include flexCenter(row, wrap);    
+
+    // background-color: yellow;   
+   
 }
+
+.first-section {
+    @include firstSectionDesign();
+    width: 100%;
+    border-radius: 10px 10px 0 0;    
+
+    h1 {
+        @include firstSectionDesign();               
+        color: $primaryOne;
+        
+    }
+
+    article {
+        background-color: $firstSectionBackground;
+        margin: 0;
+        
+        h2 {
+            @include firstSectionDesign();
+            color: $primaryTwo; 
+            font-size: 1.1em;                
+        } 
+        
+        ul {
+            background-color: $firstSectionBackground;
+            list-style-type: none;
+            padding: 10px 20px 40px 20px;
+
+            li {
+                background-color: $firstSectionBackground;
+                color: $fontColor;
+                line-height: 1.4em;
+            }
+        }
+    }  
+}
+
+
+
 
 
 
