@@ -1,0 +1,108 @@
+Arquivo .scss
+
+$primaryOne: hsl(179, 62%, 43%); 
+$primaryTwo: hsl(71, 73%, 54%);
+$primaryThree: hsl(179, 47%, 52);
+$mainBackground: hsl(204, 43%, 93%);
+$firstSectionBackground: white;
+$fontColor: hsl(218, 22%, 67%);
+
+@mixin reset() {
+    margin: 0;
+    padding: 0;  
+}
+
+@mixin flexCenter($direction, $wrap) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: $direction $wrap;
+}
+
+@mixin flexStart($direction, $wrap) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: $direction $wrap;
+    
+}
+
+@mixin firstSectionDesign() {
+    background-color: white;
+    padding: 20px 20px 1px 20px; 
+} 
+
+@mixin secondSectionDesign() {
+    background-color: $primaryThree;
+    padding: 20px 20px 1px 20px; 
+} 
+
+* {   
+    @include reset();
+    background-color: $mainBackground;     
+}
+
+body {
+    margin: auto;   
+    height: 100vh;
+    font-family: 'Karla', sans-serif;
+}
+
+main {
+    width: 100%; 
+    max-width: 1440px;     
+    @include flexCenter (row, wrap);
+    
+    background-color: yellow;
+}
+
+.first-section {    
+    @include flexStart(column, wrap);
+    @include firstSectionDesign();   
+    
+    border-radius: 10px 10px 0 0;    
+
+    h1 {
+        @include firstSectionDesign();
+        display: flex;                     
+        color: $primaryOne; 
+        width: auto;       
+    }
+
+    article {
+        align-items: flex-start;
+        background-color: $firstSectionBackground;
+        margin: 0;
+        
+        h2 {
+            @include firstSectionDesign();
+            color: $primaryTwo; 
+            font-size: 1.1em;                
+        } 
+        
+        ul {
+            background-color: $firstSectionBackground;
+            list-style-type: none;
+            padding: 10px 20px 40px 20px;
+
+            li {
+                background-color: $firstSectionBackground;
+                color: $fontColor;
+                line-height: 1.4em;
+            }
+        }
+    }  
+}
+
+.second-section {
+    @include secondSectionDesign();    
+
+    h2 {
+        background-color: $primaryThree;
+    }
+}
+
+.third-section {    
+    margin: 0;
+    padding: 0;    
+}

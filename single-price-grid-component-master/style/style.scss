@@ -2,81 +2,158 @@ $primaryOne: hsl(179, 62%, 43%);
 $primaryTwo: hsl(71, 73%, 54%);
 $primaryThree: hsl(179, 47%, 52);
 $mainBackground: hsl(204, 43%, 93%);
-$firstSectionBackground: white;
-$fontColor: hsl(218, 22%, 67%);
-
-@mixin reset() {
-    margin: 0;
-    padding: 0;  
-}
-
-@mixin flexCenter($direction, $wrap) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: $direction $wrap;
-}
-
-@mixin firstSectionDesign() {
-    background-color: white;
-    padding: 20px 20px 1px 20px; 
-} 
-
-* {
-    @include reset();
-    background-color: $mainBackground;     
-}
+$firsSectionBackground: white;
+$fontColorOne: hsl(218, 22%, 67%);
+$fontColorTwo: hsl(180, 100%, 94%);
 
 body {
-    @include reset();
-    height: 100vh;
-    font-family: 'Karla', sans-serif;
-}
-
-main {
     max-width: 1440px;
-    margin: 200px 300px;
-    @include flexCenter(row, wrap);     
+    margin: 0;
+    padding: 0;
+    background-color: $mainBackground;
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;    
 }
 
-.first-section {
-    @include firstSectionDesign();
-    display: flex;
-    flex-flow: column wrap;
-    align-items: flex-start;
-    border-radius: 10px 10px 0 0;  
+.grid {
+    display: grid;    
+    grid-template-columns: 1fr 1fr;
+    margin: 5% auto 25px auto; 
+    max-width: 720px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 12px 0px rgba(148, 147, 147, 0.5);
 
-    h1 {
-        @include firstSectionDesign();
-        display: flex;                     
-        color: $primaryOne; 
-        width: auto;       
-    }
-
-    article {
-        align-items: flex-start;
-        background-color: $firstSectionBackground;
-        margin: 0;
+    .first-section {
+        background-color: $firsSectionBackground;
+        grid-row: 1;
+        grid-column: 1/3;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 15px 30px 25px 35px; 
         
+        h1 {
+            color: $primaryOne;
+        }
+
         h2 {
-            @include firstSectionDesign();
-            color: $primaryTwo; 
-            font-size: 1.1em;                
-        } 
+            font-size: 1.2em;
+            color: $primaryTwo;
+        }
         
         ul {
-            background-color: $firstSectionBackground;
+            padding: 0;
             list-style-type: none;
-            padding: 10px 20px 40px 20px;
+            color: $fontColorOne;
+        }
+    }
 
-            li {
-                background-color: $firstSectionBackground;
-                color: $fontColor;
-                line-height: 1.4em;
+    .second-section {
+        display: flex;
+        flex-flow: column wrap;
+        background-color: $primaryOne;
+        border-bottom-left-radius: 10px;
+        padding: 15px 30px 25px 35px;
+
+        h2 {
+            color: $fontColorTwo;
+            font-size: 1.2em;
+        }
+
+        .per-month {
+            color: $fontColorTwo; 
+            display: flex;  
+            align-items: center;         
+            
+            span {
+                font-size: 2em;
+                font-weight: 700; 
+                padding-right: 10px;                
+            }
+
+            p {
+                color: $fontColorTwo;
+                font-weight: lighter;
+                opacity: 0.75;               
             }
         }
-    }  
+
+        .full-access {
+            margin-top: 5px;
+            color: $fontColorTwo;
+            flex-grow: 1;
+        } 
+
+        .sign-up {
+            padding: 10px;
+            background-color: $primaryTwo;
+            height: 50px;
+            border-style: none;
+            border-radius: 5px;
+            color: $firsSectionBackground;
+            box-shadow: 5px 1px 10px 0px rgba(88, 88, 88, 0.75);
+             
+
+            &:hover {
+                transform: scale(1.01);
+            }
+        }
+    }
+
+    .third-section {
+        background-color: $primaryThree; 
+        border-bottom-right-radius: 10px;
+        padding: 15px 30px 25px 35px;
+
+        h2 {
+            color: $fontColorTwo;
+            font-size: 1.2em;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 0.9em;
+            color: $fontColorTwo;
+            line-height: 1.4em;
+        }
+    }       
 }
+@media (max-width: 792px) {
+    .grid {
+        margin: 10% 5% 25px 5%;
+    }
+}
+
+
+@media (max-width: 510px) {
+    .grid { 
+        grid-template-columns: 1fr;
+
+        .first-section {
+            grid-column: 1;
+        }
+
+        .second-section {
+            border-bottom-left-radius: 0px;
+        }
+
+        .third-section {
+            border-bottom-left-radius: 10px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .grid {
+        margin: 10% 10% 25px 10%;
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
 
 
 
