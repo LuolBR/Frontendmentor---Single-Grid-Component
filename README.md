@@ -1,6 +1,6 @@
 # Frontend Mentor - Single Price Grid Component
 
-![Design preview for the Single Price Grid Component coding challenge](./design/desktop-preview.jpg)
+<img alt="Single Price Grid" title="Single Price Grid" src="https://github.com/LuolBR/Frontendmentor---Single-Grid-Component/blob/main/single-price-grid-component-master/design/desktop-preview.jpg"/>
 
 ## Welcome! 👋
 
